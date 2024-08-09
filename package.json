@@ -4,6 +4,7 @@
   "description": "A snippets extension for Visual Studio Code",
   "version": "0.1.0",
   "icon": "icon.png",
+  "publisher": "bucket",
   "engines": {
     "vscode": "^1.92.0"
   },
