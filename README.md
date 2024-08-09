@@ -18,6 +18,6 @@ None
 ## Release Notes
 
 
-### 0.1.0
+### 0.1.1
 
-Basic snippets added, still need some work
+Basic snippets added, still need some work. Github CI/CD working
