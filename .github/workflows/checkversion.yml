@@ -1,0 +1,45 @@
+name: Check Version
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the code from the pull request branch
+    - name: Check out the pull request branch
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
+
+    # Step 2: Read the version from package.json in the PR branch
+    - name: Get PR package.json version
+      id: pr_version
+      run: |
+        echo "pr_version=$(jq -r '.version' package.json)" >> $GITHUB_ENV
+
+    # Step 3: Check out the code from the main branch
+    - name: Check out the main branch
+      uses: actions/checkout@v3
+      with:
+        ref: main
+
+    # Step 4: Read the version from package.json in the main branch
+    - name: Get main package.json version
+      id: main_version
+      run: |
+        echo "main_version=$(jq -r '.version' package.json)" >> $GITHUB_ENV
+
+    # Step 5: Compare the two versions
+    - name: Compare versions
+      run: |
+        if [ "$pr_version" == "$main_version" ]; then
+          echo "The version in package.json must be different from the main branch."
+          exit 1
+        else
+          echo "Version check passed. PR version: $pr_version, Main version: $main_version"
+        fi
