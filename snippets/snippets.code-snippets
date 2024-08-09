@@ -31,5 +31,33 @@
         "prefix": ["simport", "scriptimp"],
         "body": ["local items = dofile(minetest.get_modpath(\"\") .. \"/.lua\")"],
         "description": "Import a Lua script."
+    },
+
+    "edible item": {
+        "prefix": ["edibleitem", "itemedible"],
+        "body": [
+            "minetest.register_craftitem(\"\", {",
+            "   description = \"\",",
+            "   inventory_image = \".png\",",
+            "   sound = { eat = \"\"},",
+            "   on_use = minetest.item_eat(),",
+            "   groups = {}",
+            "})",
+
+        ],
+        "description": "Register an edible item"
+    },
+
+    "basic item": {
+        "prefix": ["basicitem", "itembasic"],
+        "body": [
+            "minetest.register_craftitem(\"\", {",
+            "   description = \"\",",
+            "   inventory_image = \".png\",",
+            "   groups = {}",
+            "})",
+
+        ],
+        "description": "Register a basic item"
     }
 }
