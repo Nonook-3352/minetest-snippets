@@ -2,8 +2,8 @@
 ## Features
 
 Minetest-snippets help writing boiler-plate code for the Minetest API
-Snippets list : [here](https://github.com/Nonook-3352/minetest-snippets/wiki)
-Github repo : [here](https://github.com/Nonook-3352/minetest-snippets)
+- Snippets list : [here](https://github.com/Nonook-3352/minetest-snippets/wiki)
+- Github repo : [here](https://github.com/Nonook-3352/minetest-snippets)
 
 ## Requirements
 
