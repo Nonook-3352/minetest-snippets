@@ -1,0 +1,35 @@
+{
+    "Shapeless craft": {
+        "prefix": ["less", "slcraft"],
+        "body": [
+            "minetest.register_craft({",
+            "   type = \"shapeless\",",
+            "   output = \"\",",
+            "   recipe = { \"\", \"\"},",
+            "})",
+        ],
+        "description": "Register a shapeless craft."
+    },
+
+    "Shaped craft": {
+        "prefix": ["shaped", "shcraft"],
+        "body": [
+            "minetest.register_craft({",
+            "   type = \"shaped\",",
+            "   output = \"\",",
+            "   recipe = {",
+            "       {\"\", \"\", \"\",},",
+            "       {\"\", \"\", \"\",},",
+            "       {\"\", \"\", \"\",},",
+            "   }",
+            "})",
+        ],
+        "description": "Register a shaped craft."
+    },
+
+    "Import script": {
+        "prefix": ["simport", "scriptimp"],
+        "body": ["local items = dofile(minetest.get_modpath(\"\") .. \"/.lua\")"],
+        "description": "Import a Lua script."
+    }
+}
